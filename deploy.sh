@@ -20,6 +20,6 @@ docker push masashiu/multi-worker:$SHA
 aws eks --region ap-northeast-1 update-kubeconfig --name uemura-udemy-cluster
 # kuebctl apply changes
 kubectl apply -f k8s
-kubectl set image deployments/server-deployments server=masashiu/multi-server:$SHA
-kubectl set image deployments/client-deployments client=masashiu/multi-client:$SHA
-kubectl set image deployments/worker-deployments worker=masashiu/multi-worker:$SHA
+kubectl set image deployments/server-deployment server=masashiu/multi-server:$SHA
+kubectl set image deployments/client-deployment client=masashiu/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=masashiu/multi-worker:$SHA
