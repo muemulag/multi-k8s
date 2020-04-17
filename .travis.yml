@@ -15,21 +15,21 @@ before_install:
 script:
   - docker run -e CI=ture masashiu/react-test npm test
 
-# eks setting
-before_deploy:
-  # install kubectl (amazon-binary)
-  - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/kubectl
-  - chmod +x ./kubectl
-  - mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
-  # install aws-cli
-  - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-  - unzip awscliv2.zip
-  - sudo ./aws/install
-  # delete files
-  - rm -rf aws/ awscliv2.zip kubectl
-
-deploy:
-  provider: script
-  script: bash ./deploy.sh
-  on:
-    branch: master
+# # eks setting
+# before_deploy:
+#   # install kubectl (amazon-binary)
+#   - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/kubectl
+#   - chmod +x ./kubectl
+#   - mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+#   # install aws-cli
+#   - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+#   - unzip awscliv2.zip
+#   - sudo ./aws/install
+#   # delete files
+#   - rm -rf aws/ awscliv2.zip kubectl
+#
+# deploy:
+#   provider: script
+#   script: bash ./deploy.sh
+#   on:
+#     branch: master
