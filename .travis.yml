@@ -9,7 +9,7 @@ env:
 
 # for test
 before_install:
-  - docker build -t masashiu/react-test -f ./clinet/Dockerfile.dev ./client
+  - docker build -t masashiu/react-test -f ./client/Dockerfile.dev ./client
 
 # test
 script:
