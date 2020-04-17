@@ -1,7 +1,7 @@
 # build image with $SHA tag
 docker build -t masashiu/multi-client:latest -t masashiu/multi-client:$SHA -f ./client/Dockerfile ./client
 docker build -t masashiu/multi-server:latest -t masashiu/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t masashiu/multi-worker:latest -t masashiu/multi-worker:$SHA -f ./worker/Dockerfile./worker
+docker build -t masashiu/multi-worker:latest -t masashiu/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 # Log in to the docker CLI
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
